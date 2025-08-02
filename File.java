@@ -1,8 +1,5 @@
 public class File {
     public static void main(String[] args) {
-<<<<<<< HEAD
-        
-=======
         System.out.println("Hello");
 
         list.stream().collect(Collectors.summingInt(Students::getMatrNr));
@@ -20,6 +17,5 @@ public class File {
             return a.getfName().compareTo(b.getfName());
         });
         System.out.println(list);
->>>>>>> TestBranch
     }
 }
