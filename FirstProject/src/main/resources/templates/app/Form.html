@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--<form method="post" th:object="${person}">-->
+<!--    <label for="firstName">First Name</label>-->
+<!--    <input type="text" id="firstName" th:field="*{fName}">-->
+<!--    <span th:if="${#fields.hasErrors('fName')}" th:errors="*{fName}" class="error"></span>-->
+<!--    <label for="lastName">Last Name</label>-->
+<!--    <input type="text" id="lastName" th:field="*{lName}">-->
+<!--    <span th:if="${#fields.hasErrors('lName')}" th:errors="*{lName}" class="error"></span>-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<!--<form method="post">-->
+<!--    <label for="firstName">First Name</label>-->
+<!--    <input type="text" id="firstName" th:value="${fName}">-->
+<!--    <label for="lastName">Last Name</label>-->
+<!--    <input type="text" id="lastName" th:value="${lName}">-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<form method="post" th:object="${person}">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" th:field="*{fName}">
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" th:field="*{lName}">
+    <p th:text="${result}">Result</p>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

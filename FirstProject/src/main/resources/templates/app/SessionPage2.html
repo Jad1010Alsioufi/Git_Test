@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SessionPage2</title>
+</head>
+<body>
+
+<!----------------------------- First Example ----------------------------->
+
+<!--<h1>Continue ..</h1>-->
+<!--<form action="/session3" method="post">-->
+<!--    <span th:text="${fName}"></span>-->
+<!--    <span th:text="${lName}"></span>-->
+
+<!--    <br>-->
+
+<!--    <label for="email">Email</label>-->
+<!--    <input type="text" id="email" name="email">-->
+<!--    <label for="password">Password</label>-->
+<!--    <input type="text" id="password" name="password">-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+
+<!----------------------------- Second Example ----------------------------->
+
+<!--<h1>Continue ..</h1>-->
+<!--<form action="/session3" method="post" th:object="${person}">-->
+<!--    <div>-->
+<!--        <span th:text="*{fName}"></span>-->
+<!--        <span th:text="*{lName}"></span>-->
+<!--    </div>-->
+
+<!--    <br>-->
+
+<!--    <input type="hidden" name="fName" th:value="*{fName}">-->
+<!--    <input type="hidden" name="lName" th:value="*{lName}">-->
+
+<!--    <label for="lName">Name</label>-->
+<!--    <input type="text" id="lName" th:field="*{lName}">-->
+<!--    <label for="email">Email</label>-->
+<!--    <input type="text" id="email" name="email">-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+
+<!----------------------------- Session Example ----------------------------->
+
+<h1>Continue ..</h1>
+<form action="/session3" method="post" th:object="${person}">
+    <div>
+        <span th:text="*{fName}"></span>
+        <span th:text="*{lName}"></span>
+    </div>
+
+    <br>
+
+    <label for="lName">Name</label>
+    <input type="text" id="lName" th:field="*{lName}">
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

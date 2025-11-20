@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1>Return Type <span th:text="${message}"></span></h1>-->
+<form method="post">
+    <h1>Hello <span th:text="${message}">X</span></h1>
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="fName">
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lName">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
