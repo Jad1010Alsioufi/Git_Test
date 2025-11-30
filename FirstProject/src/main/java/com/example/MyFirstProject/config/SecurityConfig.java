@@ -14,33 +14,33 @@ import java.util.List;
 @Configuration
 public class SecurityConfig {
 
-//    @Bean
-//    public SecurityFilterChain configure(HttpSecurity chainBuilder) throws Exception {
-//
-//        chainBuilder.authorizeHttpRequests(
-//                configurer -> configurer.requestMatchers("/hello", "/welcome", "/login", "/bad").permitAll()
-//                        .anyRequest().authenticated()
-//        ).oauth2Login(Customizer.withDefaults());
-//
-//        return chainBuilder.build();
-//    }
-
     @Bean
     public SecurityFilterChain configure(HttpSecurity chainBuilder) throws Exception {
 
         chainBuilder.authorizeHttpRequests(
                 configurer -> configurer.requestMatchers("/hello", "/welcome", "/login", "/bad").permitAll()
                         .anyRequest().authenticated()
-        ).formLogin(customizer -> customizer
-                .loginPage("/login")
-                .loginProcessingUrl("/process")
-                .defaultSuccessUrl("/welcome", true)
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .failureUrl("/bad"));
+        ).oauth2Login(Customizer.withDefaults());
 
         return chainBuilder.build();
     }
+
+//    @Bean
+//    public SecurityFilterChain configure(HttpSecurity chainBuilder) throws Exception {
+//
+//        chainBuilder.authorizeHttpRequests(
+//                configurer -> configurer.requestMatchers("/hello", "/welcome", "/login", "/bad").permitAll()
+//                        .anyRequest().authenticated()
+//        ).formLogin(customizer -> customizer
+//                .loginPage("/login")
+//                .loginProcessingUrl("/process")
+//                .defaultSuccessUrl("/welcome", true)
+//                .usernameParameter("username")
+//                .passwordParameter("password")
+//                .failureUrl("/bad"));
+//
+//        return chainBuilder.build();
+//    }
 
     // Don't need it by using GitHub ...
     @Bean
