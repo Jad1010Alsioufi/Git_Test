@@ -15,9 +15,7 @@ public class Person {
     @NotEmpty(message = "Shouldn't be empty") public String email;
     @Min(value = 18, message = "Shouldn't be empty") public Integer age;
 
-    public Person(String fName, String lName) {
-        this.fName = fName;
-        this.lName = lName;
+    public Person() {
     }
 
     public String getfName() {

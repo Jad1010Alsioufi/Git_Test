@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <p>The Result is: <span th:text="${result}"><strong></strong></span></p>
+    <form method="post" th:object="${man}">
+        <label for="height">Height</label>
+        <input type="text" id="height" th:field="*{height}">
+<!--        <span th:if="${#fields.hasErrors('fName')}" th:errors="*{fName}" class="error"></span>-->
+        <label for="weight">Weight</label>
+        <input type="text" id="weight" th:field="*{weight}">
+<!--        <span th:if="${#fields.hasErrors('lName')}" th:errors="*{lName}" class="error"></span>-->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

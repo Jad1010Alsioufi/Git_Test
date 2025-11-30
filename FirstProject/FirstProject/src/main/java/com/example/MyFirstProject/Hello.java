@@ -2,8 +2,10 @@ package com.example.MyFirstProject;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -80,13 +82,13 @@ public class Hello {
         return "/app/T";
     }
 
-    @GetMapping("/login")
-    public String startPage() {
-        return "/app/Fake_Login";
+    @GetMapping("/gogo")
+    public String log() {
+        return "/app/B";
     }
 
     @GetMapping("/welcome")
-    public String log() {
+    public String welcome() {
         return "/app/B";
     }
 
@@ -98,6 +100,11 @@ public class Hello {
     @GetMapping("/bad")
     public String goBad() {
         return "/app/C";
+    }
+
+    @GetMapping("/login")
+    public String startPage() {
+        return "/app/Fake_Login";
     }
 
 

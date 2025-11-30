@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SessionPage1</title>
+</head>
+<body>
+
+<!----------------------------- First Example ----------------------------->
+
+<!--<h1>Login Form:</h1>-->
+<!--<form action="/session2" method="post">-->
+<!--    <label for="fName">Name</label>-->
+<!--    <input type="text" id="fName" name="fName">-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<!----------------------------- Second Example ----------------------------->
+
+<!--<h1>Login Form:</h1>-->
+<!--<form action="/session2" method="post" th:object="${person}">-->
+<!--    <label for="fName">Name</label>-->
+<!--    <input type="text" id="fName" th:field="*{fName}">-->
+<!--    <label for="lName">Name</label>-->
+<!--    <input type="text" id="lName" th:field="*{lName}">-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<!----------------------------- Session Example ----------------------------->
+
+<h1>Login Form:</h1>
+<form action="/session2" method="post" th:object="${person}">
+    <label for="fName">Name</label>
+    <input type="text" id="fName" th:field="*{fName}">
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

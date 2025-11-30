@@ -18,9 +18,15 @@ public class SecurityConfig {
 //    public SecurityFilterChain configure(HttpSecurity chainBuilder) throws Exception {
 //
 //        chainBuilder.authorizeHttpRequests(
-//                configurer -> configurer.requestMatchers("/hello", "/welcome", "/login", "/bad").permitAll()
+//                configurer -> configurer.requestMatchers("/hello", "/login", "/bad", "/welcome").permitAll()
 //                        .anyRequest().authenticated()
-//        ).oauth2Login(Customizer.withDefaults());
+//        ).formLogin(customizer -> customizer
+//                .loginPage("/login")
+//                .loginProcessingUrl("/process")
+//                .defaultSuccessUrl("/welcome", true)
+//                .usernameParameter("username")
+//                .passwordParameter("password")
+//                .failureUrl("/bad"));
 //
 //        return chainBuilder.build();
 //    }
@@ -29,25 +35,19 @@ public class SecurityConfig {
     public SecurityFilterChain configure(HttpSecurity chainBuilder) throws Exception {
 
         chainBuilder.authorizeHttpRequests(
-                configurer -> configurer.requestMatchers("/hello", "/welcome", "/login", "/bad").permitAll()
+                configurer -> configurer.requestMatchers("/hello", "/login", "/bad", "/welcome").permitAll()
                         .anyRequest().authenticated()
-        ).formLogin(customizer -> customizer
-                .loginPage("/login")
-                .loginProcessingUrl("/process")
-                .defaultSuccessUrl("/welcome", true)
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .failureUrl("/bad"));
+        ).oauth2Login(Customizer.withDefaults());
 
         return chainBuilder.build();
     }
 
     // Don't need it by using GitHub ...
-    @Bean
-    public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(new User("a", "{noop}b", List.of()));
-        return manager;
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+//        manager.createUser(new User("sasuke", "{noop}123", List.of()));
+//        return manager;
+//    }
 
 }

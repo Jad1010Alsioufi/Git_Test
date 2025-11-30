@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Test2</title>
+</head>
+<body>
+<form action="/myPage1" method="post" th:object="${person}">
+    <label for="fName">First Name</label>
+    <input type="text" id="fName" th:field="*{fName}">
+    <label for="lName">Last Name</label>
+    <input type="text" id="lName" th:field="*{lName}">
+    <label for="age">Age</label>
+    <input type="text" id="age" th:field="*{age}">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Site2</title>
+</head>
+<body>
+<h1>Continue ..</h1>
+<form action="/site2" method="post">
+    <input type="hidden" name="fName" th:value="${fName}">
+    <input type="hidden" name="lName" th:value="${lName}">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password">
+<!--    <input type="hidden" name="fName">-->
+<!--    <input type="hidden" name="lName">-->
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.annotation.SessionScope;
 
 @Controller
-//@SessionAttributes("person")
+@SessionAttributes("person")
 public class SessionTry {
 
     @ModelAttribute("person")
     public Person returnPerson() {
-        return new Person("Carla", "Moore");
+        return new Person();
     }
 
     // First Example ...

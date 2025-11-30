@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Test2</title>
+</head>
+<body>
+<!-- Work with Obj-->
+<div th:object="${person}">
+    <p>Hello <span th:text="*{fName}"></span> <span th:text="*{lName}"></span></p>
+    <p>You are <span th:text="*{age}"></span> years old</p>
+</div>
+
+<!-- Not work with Obj -->
+
+<!--<p>Hello <span th:text="${fName}"></span> <span th:text="${lName}"></span></p>-->
+<!--<p>You are <span th:text="${age}"></span> years old</p>-->
+
+<!-- or -->
+
+<!--<div th:object="${person}">-->
+<!--    <p>Hello <span th:field="*{fName}"></span> <span th:field="*{lName}"></span></p>-->
+<!--    <p>You are <span th:field="*{age}"></span> years old</p>-->
+<!--</div>-->
+
+<br>
+
+<!-- For Primitive -->
+
+<form action="/myPage2" method="post" th:object="${person}">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password">
+
+    <input type="hidden" name="fName" th:value="*{fName}">
+    <input type="hidden" name="lName" th:value="*{lName}">
+    <input type="hidden" name="age" th:value="*{age}">
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
